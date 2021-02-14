@@ -4,7 +4,7 @@ const loader = require('./src/loaders/index');
 loader
   .init()
   .then(({ fastify }) => {
-    const { PORT, env } = require('./config');
+    const { PORT } = require('./config');
 
     // Catching errors
     process.on('uncaughtException', (err) => {
@@ -23,7 +23,7 @@ loader
 		console.log('err: ', err);
         process.exit(1);
       }
-      console.log(`${env}: Server running at address = ${address}`);
+      console.log(`Server running at address = ${address}`);
     });
   })
   .catch((err) => {

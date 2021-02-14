@@ -3,6 +3,7 @@ module.exports = {
 	PORT: process.env.PORT || 3000,
 	debug: process.env.DEBUG || false,
 	shortUrlLength: 5,
+	lockTTL: 60000, // 1 min
 
 	db: {
 	  user: process.env.DB_USER || 'dbuser',
@@ -10,5 +11,10 @@ module.exports = {
 	  database: process.env.DB_NAME || 'dbname',
 	  password: process.env.DB_PASSWORD || 'dbpassword',
 	  port: 5432,
+	},
+
+	redisConfig: {
+		host: process.env.REDIS_HOST || '127.0.0.1',
+		port: process.env.REDIS_PORT || 6379,
 	},
 };
